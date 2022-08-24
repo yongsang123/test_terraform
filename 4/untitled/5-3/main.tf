@@ -3,9 +3,9 @@ resource "aws_security_group" "alb" {
 
   ## 인바운드 HTTP 트래픽 허용
   ingress {
-    from_port = 80
+    from_port = 8080
     protocol  = "tcp"
-    to_port   = 80
+    to_port   = 8080
     cidr_blocks = ["0.0.0.0/0"]
   }
   ## 아웃바운드 모든 트래픽 허용
