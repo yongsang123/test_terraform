@@ -1,7 +1,7 @@
 ## Step 2
 resource "aws_lb_listener" "http" {
   load_balancer_arn = aws_lb.example.arn
-  port = 80
+  port = 8080
   protocol = "HTTP"
   ## 기본값으로 단순한 404 페이지 오류를 반환한다
   default_action {
