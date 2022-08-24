@@ -21,9 +21,9 @@ resource "aws_security_group" "alb" {
 
   ## 인바운드 HTTP 트래픽 허용
   ingress {
-    from_port = 80
+    from_port = 8080
     protocol  = "tcp"
-    to_port   = 80
+    to_port   = 8080
     cidr_blocks = ["0.0.0.0/0"]
   }
   ## 아웃바운드 모든 트래픽 허용
@@ -59,7 +59,7 @@ resource "aws_lb" "example" {
 
 resource "aws_lb_listener" "http" {
   load_balancer_arn = aws_lb.example.arn
-  port = 80
+  port = 8080
   protocol = "HTTP"
   ## 기본값으로 단순한 404 페이지 오류를 반환한다
   default_action {
